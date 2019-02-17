@@ -1,13 +1,24 @@
-import _ from 'lodash';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function component() {
-    let element = document.createElement('div');
-  
-    element.innerHTML = _.join(['cat', 'weback'], ' ');
-    element.classList.add('hello');
-    return element;
+let app = document.createElement('div');
+app.id = 'app';
+
+document.body.appendChild(app);
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        Heyo
+      </div>
+    )
   }
-  
-  document.body.appendChild(component());
+}
 
-  [1, 2, 3, 4, 5, 6].map((n) => n + 1);
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
+  // ES6 babel test
+  // [1, 2, 3, 4, 5, 6].map((n) => n + 1);
