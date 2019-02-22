@@ -15,7 +15,7 @@ module.exports = {
       hot: true
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].js', // use [name].[has].js for prod
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -35,7 +35,9 @@ module.exports = {
           {
               test: /\.(sa|sc|c)ss$/,
               use: [
-                  MiniCssExtractPlugin.loader,
+                /* MiniCss for Prod, style-loader for dev */
+                //   MiniCssExtractPlugin.loader,
+                  'style-loader',
                   'css-loader',
                   "sass-loader"
               ]
@@ -43,11 +45,12 @@ module.exports = {
       ]
   },
   plugins: [
+    // 
       new CleanWebpackPlugin(['dist']),
       new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           //both options are optional
-          filename: "[name].css",
+          filename: "[name].css", // use [name][has].css for prod
           chunkFilename: "[id].css" 
       }),
       new HtmlWebpackPlugin(),
