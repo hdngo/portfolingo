@@ -1,5 +1,217 @@
-.home {
-    h1 {
-        color: teal;
+.splashPage {
+    position: relative;
+    background: #44a08d; /* fallback for old browsers */
+    background: linear-gradient(135deg, #093637, #44a08d);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    .introText {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        font-family: $antonFont;
+        font-size: 1.75rem;
+        color: white;
+        letter-spacing: .05em;
+        line-height: 1;
+
+        .introText--large:first-of-type {
+            transform: rotate(-5deg);
+            display: inline-block;
+        }
+
+        .introText--large:nth-of-type(3) {
+            margin-left: 7px;
+            margin-right: 2px;
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .introText--last {
+            display: inline-block;
+            margin-left: 2px;
+            transform: rotate(4deg);
+        }
+
+        .introText--large {
+            font-size: 2.25rem;
+            font-weight: 300;
+        }
+
+        .introText--bang {
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-left: 3px;
+            transform: rotate(10deg);
+            display: inline-block;
+        }
+    }
+
+
+    .splashPage__name {
+        color: white;
+        font-family: $antonFont;
+        font-size: 6.5rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: .025em;
+
+        span[class^="splashPage__name--"] {
+            display: none;
+        }
+        
+        .splashPage__name--h{
+            transition: 1.5s ease all;
+            transition-delay: 2s;
+            opacity: 0;
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &.splashPage--visible {
+        $strokeColors: hsl(44, 88%, 62%), hsl(179, 50%, 23%), hsl(41, 90%, 69%),  hsl(41, 98%, 48%), hsl(177, 57%, 40%);
+        $strokeCount: 5;
+        $strokeStep: 13%;
+
+        &::before {
+            background: #ECE9E6;  /* fallback for old browsers */
+            background-image: linear-gradient(-225deg, rgb(248, 248, 248) 0%, #D7FFFE 100%);
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            animation: simpleFade 1.9s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .introText {
+            animation: falling .9s ease-in-out, showShadow 1s ease-in 1.5s forwards;
+            text-shadow: 3px 3px 1px hsla(177, 57%, 40%, 0), -2px -1px 0px hsla(187, 75%, 36%, 0);
+        }
+
+        .splashPage__name {
+            max-width: 300px;
+            text-decoration: none;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            font: 10.5em $poppinFont;
+        }
+
+        #go {
+            fill-opacity: 0;
+            animation: fillStrokeOpacity 1.25s linear forwards;
+            animation-delay: 2.75s;
+            stroke: white;
+            stroke-width: 26px;
+        }
+
+        .name__outline--copy {
+            stroke: white;
+            fill: none;
+            stroke-width: 33px;
+            stroke-dasharray: $strokeStep $strokeStep * ($strokeCount - 1);
+            animation: trace 2.5s ease-in-out reverse, simpleFade 2s ease-in forwards;
+            stroke-dashoffset: -100%;
+            animation-delay: .9s;
+            opacity: 0;
+
+            @for $stroke from 1 through $strokeCount {
+                $currentStrokeColor: nth($strokeColors, $stroke);
+                &:nth-child(#{$stroke}) {
+                    stroke: $currentStrokeColor;
+                    stroke-dashoffset: $strokeStep * $stroke;
+                }
+            }
+        }
+
+        @keyframes trace {
+            100% {
+                stroke-dashoffset: 100%;
+            }
+        }
+
+        .name--first {
+            font-size: 1em;
+        }
+
+        .name--last {
+            font-size: 1.25em;
+        }
+
+        @keyframes fillStrokeOpacity {
+            100% {
+                fill-opacity: 1;
+                stroke-width: 3px;
+            }
+        }
+
+        @keyframes showShadow {
+            from {
+                text-shadow: 0px 0px 0px hsla(177, 57%, 40%, 0),
+                0px 0px 0px hsla(187, 75%, 36%, 0);
+            }
+            to {
+                text-shadow: 3px 3px 4px hsla(177, 57%, 40%, 1),
+                -2px -1px 0 hsla(187, 75%, 36%, .65);
+            }
+        }
+    }
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-20vh) scaleY(.65);
+    }
+    15% {
+        transform: translateY(-9vh) scaleY(3.35);
+    }
+    30% {
+        transform: translateY(-3vh) scaleY(1.75);
+    }
+    40% {
+        transform: translateY(-1vh) scaleY(1.35);
+    }
+    50% {
+        transform: translate(0, 0) scale(1.15, .95);
+    }
+    55% {
+        transform:scale(1.25, .85);
+    }
+    70% {
+        transform: translate(0, -25px) scale(1.2, .85);
+    }
+    80% {
+        transform: translateY(-35px) scale(1, 1);
+    }
+    90% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0) scale(1,1);
+    }
+}
+
+@keyframes simpleFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
