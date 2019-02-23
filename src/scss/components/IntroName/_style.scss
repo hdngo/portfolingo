@@ -1,0 +1,69 @@
+$strokeColors: hsl(44, 88%, 62%), hsl(179, 50%, 23%), hsl(41, 90%, 69%),  hsl(41, 98%, 48%), hsl(177, 57%, 40%);
+$strokeCount: 5;
+$strokeStep: 13%;
+
+.introName {
+    color: white;
+    font-family: $antonFont;
+    font-size: 6.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    max-width: 299px;
+    text-decoration: none;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        font: 10.5em $poppinFont;
+    }
+    
+    .name--first {
+        font-size: 1em;
+    }
+    
+    .name--last {
+        font-size: 1.25em;
+
+        #go {
+            fill-opacity: 0;
+            animation: fillStrokeOpacity 1.25s linear forwards;
+            animation-delay: 2.25s;
+            stroke: white;
+            stroke-width: 26px;
+        }
+    }
+
+    .name__outline--copy {
+        stroke: white;
+        fill: none;
+        stroke-width: 33px;
+        stroke-dasharray: $strokeStep $strokeStep * ($strokeCount - 1);
+        animation: trace 2.5s ease-in-out reverse, simpleFade 1.75s ease-in forwards;
+        stroke-dashoffset: -100%;
+        animation-delay: .9s;
+        opacity: 0;
+    
+        @for $stroke from 1 through $strokeCount {
+            $currentStrokeColor: nth($strokeColors, $stroke);
+            &:nth-child(#{$stroke}) {
+                stroke: $currentStrokeColor;
+                stroke-dashoffset: $strokeStep * $stroke;
+            }
+        }
+    }
+}
+
+
+@keyframes trace {
+    100% {
+        stroke-dashoffset: 100%;
+    }
+}
+
+@keyframes fillStrokeOpacity {
+    100% {
+        fill-opacity: 1;
+        stroke-width: 3px;
+    }
+}

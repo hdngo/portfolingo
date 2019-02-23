@@ -1,17 +1,16 @@
 /* Global */
 @import "../node_modules/normalize.css/normalize.css";
 @import './scss/global/variables';
+@import './scss/global/mixins';
 @import './scss/global/animations';
 
 /* Page Specific */
-@import './scss/pages/home';
+@import './scss/pages/home'; // Home
+@import './scss/pages/splashpage'; // Splash
 
 /* Components */
-@import './scss/components/IntroText/style';
-
-.hello {
-    font-size: 12px;
-}
+@import './scss/components/IntroText/style'; // IntroText
+@import './scss/components/IntroName/style'; // IntroName
 
 html {
     -webkit-font-smoothing: antialiased;

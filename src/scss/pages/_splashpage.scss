@@ -1,0 +1,30 @@
+.splashPage {
+    position: relative;
+    background: #44a08d; /* fallback for old browsers */
+    background: linear-gradient(135deg, #093637, #44a08d);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    &::before {
+        background: #ECE9E6;  /* fallback for old browsers */
+        background-image: linear-gradient(-225deg, rgb(248, 248, 248) 0%, #D7FFFE 100%);
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        animation: simpleFade 1.9s ease-in-out forwards;
+        animation-delay: 1.5s;
+    }
+}
+
