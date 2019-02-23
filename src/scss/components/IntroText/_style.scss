@@ -50,7 +50,7 @@
 
 .introText.introText-enter-done {
     text-shadow: 3px 3px 1px hsla(177, 57%, 40%, 0), -2px -1px 0px hsla(187, 75%, 36%, 0);
-    animation: showShadow .9s ease-in forwards;
+    animation: showShadow .9s .5s ease-in forwards;
 }
 
 /* Trampoline Animation */
