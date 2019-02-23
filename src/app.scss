@@ -1,9 +1,13 @@
 /* Global */
 @import "../node_modules/normalize.css/normalize.css";
 @import './scss/global/variables';
+@import './scss/global/animations';
 
 /* Page Specific */
 @import './scss/pages/home';
+
+/* Components */
+@import './scss/components/IntroText/style';
 
 .hello {
     font-size: 12px;

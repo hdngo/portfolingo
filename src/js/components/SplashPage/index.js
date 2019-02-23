@@ -1,18 +1,20 @@
 import React from 'react';
+import IntroText from '../IntroText/';
+import { CSSTransition } from 'react-transition-group';
 
-class SplashPage extends React.Component {
+export default class SplashPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             value: null,
             cssClasses: 'splashPage',
+            show: false,
         };
     }
     
     // runs after component is rendered
     componentDidMount() {
-        console.log('show intro text');
-        this.setState({cssClasses: `${this.state.cssClasses} splashPage--visible` })
+        this.setState({cssClasses: `${this.state.cssClasses} splashPage--visible`, show: true })
     }
 
     componentWillUnmount() {
@@ -20,11 +22,21 @@ class SplashPage extends React.Component {
     }
 
     render() {
+        const show = this.state.show;
         return (
             <div className={this.state.cssClasses}>
-                <div className='introText'><span className='introText--large'>H</span>eyo<span className='introText--large introText--bang'>!</span><br/><span className='introText--large'>I</span>'<span className='introText--last'>m</span></div>
+                <CSSTransition
+                    in={show}
+                    timeout={{
+                        enter: 1800,
+                    }}
+                    unmountOnExit
+                    classNames='introText'
+                >
+                    <IntroText />
+                </CSSTransition>
                 <div className='splashPage__name'>
-                <a href="#">
+                <a href="/home">
                     <svg viewBox="0 0 4300 3400" preserveAspectRatio='xMaxYMax meet'>
                         <symbol id="name">
                             <text textAnchor='middle' x="50%" y="35%" className='name--first' fontWeight='bold'>Harvey</text>
@@ -71,5 +83,3 @@ class SplashPage extends React.Component {
         )
     }
 };
-
-export default SplashPage;
