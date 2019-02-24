@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SplashPage from './js/components/SplashPage';
 import { CSSTransition } from 'react-transition-group';
+import Header from './js/components/Header';
+import LeftNav from './js/components/LeftNav';
+import RightNav from './js/components/RightNav';
 
 let app = document.createElement('div');
 app.id = 'app';
@@ -13,30 +16,57 @@ class App extends React.Component {
     super(props);
     this.state = {
         value: null,
-        showSplash: false,
+        showSplash: true,
+        showHome: false,
     };
+
+    this.hideSplash = this.hideSplash.bind(this);
+    this.showHome = this.showHome.bind(this);
   }
 
   componentDidMount() {
-    this.setState({showSplash: true});
+  }
+
+  componentWillUnmount() {
+  }
+
+  hideSplash() {
+    this.setState({showSplash: false});
+    this.showHome();
+  }
+
+  showHome() {
+    this.setState({showHome: true});
   }
 
   render() {
     const showSplash = this.state.showSplash;
-    return (
-      <div className="pageBody">
-        <CSSTransition
-          in={showSplash}
-          timeout={{
-            enter: 0,
-          }}
-          unmountOnExit
-          classNames='splashPage'
-        >
-          <SplashPage />
-        </CSSTransition>
-      </div>
-    )
+    if(showSplash) {
+      return (
+        <div className="pageBody">
+          <CSSTransition
+            in={showSplash}
+            timeout={{
+              enter: 0,
+              exit: 1000
+            }}
+            unmountOnExit
+            classNames='splashPage'
+          >
+            <SplashPage show={showSplash} hideSplash={this.hideSplash}/>
+          </CSSTransition>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className='pageBody'>
+          <Header/>
+          <LeftNav />
+          <RightNav />
+        </div>
+      )
+    }
   }
 }
 

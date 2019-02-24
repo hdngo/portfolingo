@@ -41,16 +41,28 @@
 }
 
 /* Enter */
-.introText.introText-enter-active {
+.introText.introText-appear {
     /* learning note: animation duration has to be <= specified timeout in csstransition
     can increase length of duration but have to update cssT timeout as well.
     doing so SEEMS to increase delay between enter-active and enter-done styles */
     animation: trampoline .9s ease-in-out;
 }
 
-.introText.introText-enter-done {
+.introText.introText-enter-active {
     text-shadow: 3px 3px 1px hsla(177, 57%, 40%, 0), -2px -1px 0px hsla(187, 75%, 36%, 0);
+}
+
+.introText.introText-enter-done {
     animation: showShadow .9s .5s ease-in forwards;
+}
+
+.introText.introText-exit-active {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+}
+
+.introText-exit-done {
+    opacity: 0;
 }
 
 /* Trampoline Animation */

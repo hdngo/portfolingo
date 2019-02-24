@@ -1,6 +1,7 @@
 /* Global */
 @import "../node_modules/normalize.css/normalize.css";
 @import './scss/global/variables';
+@import './scss/global/typography';
 @import './scss/global/mixins';
 @import './scss/global/animations';
 
@@ -9,6 +10,12 @@
 @import './scss/pages/splashpage'; // Splash
 
 /* Components */
+/* Global Components */
+@import './scss/components/Header/style'; // Header
+@import './scss/components/LeftNav/style'; // LeftNav
+@import './scss/components/RightNav/style'; // RightNav
+
+/* Splashpage*/
 @import './scss/components/IntroText/style'; // IntroText
 @import './scss/components/IntroName/style'; // IntroName
 

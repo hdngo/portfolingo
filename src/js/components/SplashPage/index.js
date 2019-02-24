@@ -8,17 +8,16 @@ export default class SplashPage extends React.Component {
         super(props);
         this.state = {
             value: null,
-            show: false,
+            show: this.props.show,
         };
     }
     
     // runs after component is rendered
     componentDidMount() {
-        this.setState({show: true })
     }
 
     componentWillUnmount() {
-        console.log('remove intro text');
+        this.props.hideSplash();
     }
 
     render() {
@@ -27,7 +26,9 @@ export default class SplashPage extends React.Component {
             <div className='splashPage'>
                 <CSSTransition
                     in={show}
+                    appear={show}
                     timeout={{
+                        appear: 900,
                         enter: 1400,
                     }}
                     unmountOnExit
@@ -46,7 +47,7 @@ export default class SplashPage extends React.Component {
                     unmountOnExit
                     classNames='introName'
                 >
-                    <IntroName />
+                    <IntroName hideSplash={this.props.hideSplash}/>
                 </CSSTransition>
             </div>
         )

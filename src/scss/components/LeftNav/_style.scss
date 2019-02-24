@@ -1,0 +1,38 @@
+@import '../../global/mixins';
+
+.nav-left__wrapper {
+    display: none;
+    @include min-bp($sm-desktop) {
+        position: fixed;
+        display: block;
+        width: 100vh;
+        height: 60px;
+        left: 80px;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        transform-origin: left top;
+        transform: rotate(-90deg) translateX(-100%);
+    }
+}
+
+.nav-left {
+    @include min-bp($sm-desktop) {
+        float: left;
+        height:100%;
+        margin-left: 3.5em;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.nav-left__link {
+    @include min-bp($sm-desktop) {
+        margin-left: 6.5em;
+        text-transform: uppercase;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

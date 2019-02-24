@@ -1,0 +1,41 @@
+.header {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 80px;
+}
+
+.logo {
+    
+}
+
+.nav__link {
+    font-size: 1rem;
+}
+
+.nav-primary {
+    display: inline-block;
+}
+
+.nav-primary__link {
+    text-transform: uppercase;
+    padding: .5em .5em;
+    margin-left: 60px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.menu-cta {
+    display: inline-block;
+    margin-left: 50px;
+}

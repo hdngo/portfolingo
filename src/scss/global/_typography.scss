@@ -1,2 +1,9 @@
 @import './variables';
 
+body, div, p, a, input, select, h1, h2, h3, h4, h5, h6 {
+    font-family: $oswaldFont;
+}
+
+a, a:hover, a:visited, a:focus {
+    text-decoration: none;
+}

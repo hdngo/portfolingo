@@ -8,7 +8,6 @@ export default class IntroText extends React.Component {
         };
     }
 
-    
     render() {
         return (
             <div className='introText'>
