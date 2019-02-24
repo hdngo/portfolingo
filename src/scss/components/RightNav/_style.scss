@@ -1,0 +1,26 @@
+@import '../../global/mixins';
+
+.nav-right__wrapper {
+    display: none;
+    @include min-bp($sm-desktop) {
+        position: absolute;
+        right: 80px;
+        top: 137px;
+        display: flex;
+        height: calc(100vh - 137px - 50px);
+        align-items: flex-start;
+    }
+}
+
+.nav-social {
+
+}
+
+.nav-social__link {
+    margin-bottom: 20px;
+    display: block;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
