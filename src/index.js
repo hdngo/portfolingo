@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import SplashPage from './js/components/SplashPage';
 import { CSSTransition } from 'react-transition-group';
 import Header from './js/components/Header';
@@ -10,6 +12,8 @@ let app = document.createElement('div');
 app.id = 'app';
 
 document.body.appendChild(app);
+
+library.add(fab);
 
 class App extends React.Component {
   constructor(props) {

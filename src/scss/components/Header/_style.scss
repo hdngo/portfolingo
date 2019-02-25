@@ -1,3 +1,5 @@
+@import '../../global/mixins';
+
 .header {
     position: absolute;
     z-index: 2;
@@ -21,8 +23,17 @@
     font-size: 1rem;
 }
 
+.nav-primary__wrapper {
+    display: inline-flex;
+    align-items: stretch;
+}
+
 .nav-primary {
-    display: inline-block;
+    display: none;
+    @include min-bp($sm-desktop) {
+        display: inline-flex;
+        align-items: center;
+    }
 }
 
 .nav-primary__link {
@@ -35,7 +46,105 @@
     }
 }
 
+.menu-cta__wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
 .menu-cta {
     display: inline-block;
-    margin-left: 50px;
+}
+
+.menu-cta__mobile-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    transform: scale(-1,1);
+    -webkit-transform: scale(-1,1);
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .menu-bar {
+        display: flex;
+        height: 2px;
+        background-color: #093637;
+        margin-bottom: 5px;
+        width: 100%;
+        animation: animateWidth 1.1s linear infinite;
+        @for $barIndex from 1 through 3 {
+            &:nth-child(#{$barIndex}) {
+                animation-delay: .25s + ($barIndex * .25)/2;
+                background-image: linear-gradient(pow(-1, $barIndex) * 90deg, #093637 0%, #2ba09a 55%, #f1a503 85%, hsl(44, 88%, 62%) 100%);
+            }
+        }
+    }
+
+    .menu-bar--default {
+        &:before {
+            content: '&nbsp;';
+            font-size: 0;
+            height: 2px;
+            width: 100%;
+        }
+
+        &:nth-child(3) {
+            margin-bottom: 0;
+        }
+    }
+
+    .menu-bar--close {
+        display: none;
+    }
+}
+
+
+/* toggle menu animations */
+@keyframes animateFullWidth {
+    to {
+        width: 100%;
+    }
+}
+@keyframes animateWidth {
+    0% {
+        width: 100%;
+    }
+
+    17% {
+        width: 67%;
+    }
+
+    33% {
+        width: 33%;
+    }
+
+    50% {
+        width: 5%;
+    }
+
+    67% {
+        width: 33%;
+    }
+
+    84% {
+        width: 67%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
