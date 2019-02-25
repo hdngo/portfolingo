@@ -5,10 +5,17 @@ export default class Header extends React.Component {
         super(props);
         this.state = {
             value: null,
+            showMobileMenu: false,
         }
+
+        this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     }
 
     componentDidMount() {
+    }
+
+    toggleMobileMenu() {
+        this.setState({showMobileMenu: !this.state.showMobileMenu});
     }
 
     render() {
@@ -20,8 +27,14 @@ export default class Header extends React.Component {
                         <a href="#" className='nav__link nav-primary__link'>Work</a>
                         <a href="#" className='nav__link nav-primary__link'>About Me</a>
                     </nav>
-                    <div className='menu-cta'>
-                    o
+                    <div className='menu-cta__wrapper'>
+                        <button className={`menu-cta__mobile-toggle ${this.state.showMobileMenu ? 'menu-cta__mobile--active' : ''}`} onClick={this.toggleMobileMenu}>
+                            <div className='menu-bar menu-bar--default'></div>
+                            <div className='menu-bar menu-bar--default'></div>
+                            <div className='menu-bar menu-bar--default'></div>
+                            <div className='menu-bar menu-bar--close'></div>
+                            <div className='menu-bar menu-bar--close'></div>
+                        </button>
                     </div>
                 </div>
             </header>

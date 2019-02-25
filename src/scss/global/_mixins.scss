@@ -20,6 +20,18 @@ $lg-desktop: 1920px;
     }
 }
 
+@function pow($number, $exponent) {
+    $value: 1;
+  
+    @if $exponent > 0 {
+      @for $i from 1 through $exponent {
+        $value: $value * $number;
+      }
+    }
+  
+    @return $value;
+}
+
 @mixin range-bp($breakpoint1, $breakpoint2) {
     @media (min-width: $breakpoint1) and (max-width: $breakpoint2) {
         @content;
