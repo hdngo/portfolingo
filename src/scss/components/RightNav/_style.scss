@@ -12,6 +12,7 @@
         justify-content: stretch;
         height: calc(100vh - 137px - 50px);
         align-items: center;
+        visibility: visible;
 
         > * {
             flex: 0 0 auto;
@@ -37,3 +38,10 @@
         margin-bottom: 0;
     }
 } 
+
+/* Mobile Styles */
+.header--mobileActive {
+    .nav-right__wrapper {
+        visibility: hidden;
+    }
+}

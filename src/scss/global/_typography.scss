@@ -7,3 +7,11 @@ body, div, p, a, input, select, h1, h2, h3, h4, h5, h6 {
 a, a:hover, a:visited, a:focus {
     text-decoration: none;
 }
+
+body, p, div, input, select {
+    color: black;
+}
+
+a {
+    color: $teal;
+}
