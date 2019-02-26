@@ -65,7 +65,7 @@ class App extends React.Component {
     else {
       return (
         <div className='pageBody'>
-          <Header/>
+          <Header />
           <LeftNav />
           <RightNav />
         </div>

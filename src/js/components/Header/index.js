@@ -1,4 +1,6 @@
 import React from 'react';
+import MobileMenu from '../MobileMenu/';
+import { CSSTransition } from 'react-transition-group';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -19,8 +21,9 @@ export default class Header extends React.Component {
     }
 
     render() {
+        const showMobileMenu = this.state.showMobileMenu;
         return (
-            <header id='header' className='header'>
+            <header id='header' className={`header ${this.state.showMobileMenu ? 'header--mobileActive' : 'header--mobileHidden'}`}>
                 <a className='logo' href="/">LOGO</a>
                 <div className='nav-primary__wrapper'>
                     <nav className='nav nav-primary'>
@@ -28,7 +31,7 @@ export default class Header extends React.Component {
                         <a href="#" className='nav__link nav-primary__link'>About Me</a>
                     </nav>
                     <div className='menu-cta__wrapper'>
-                        <button className={`menu-cta__mobile-toggle ${this.state.showMobileMenu ? 'menu-cta__mobile--active' : ''}`} onClick={this.toggleMobileMenu}>
+                        <button className={`menu-cta ${this.state.showMobileMenu ? 'menu-cta--active' : ''}`} onClick={this.toggleMobileMenu}>
                             <div className='menu-bar menu-bar--default'></div>
                             <div className='menu-bar menu-bar--default'></div>
                             <div className='menu-bar menu-bar--default'></div>
@@ -37,6 +40,18 @@ export default class Header extends React.Component {
                         </button>
                     </div>
                 </div>
+                <CSSTransition
+                    in={showMobileMenu}
+                    show={showMobileMenu}
+                    timeout={{
+                        appear: 0,
+                        enter: 400,
+                        exit: 400,
+                    }}
+                    classNames='mobile-menu'
+                >
+                    <MobileMenu />
+                </CSSTransition>
             </header>
         )
     }

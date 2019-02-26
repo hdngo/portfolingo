@@ -1,3 +1,4 @@
+@import '../../global/variables';
 @import '../../global/mixins';
 
 .header {
@@ -16,7 +17,7 @@
 }
 
 .logo {
-    
+    z-index: 4;
 }
 
 .nav__link {
@@ -53,10 +54,6 @@
 }
 
 .menu-cta {
-    display: inline-block;
-}
-
-.menu-cta__mobile-toggle {
     appearance: none;
     -webkit-appearance: none;
     border: none;
@@ -70,6 +67,7 @@
     flex-direction: column;
     transform: scale(-1,1);
     -webkit-transform: scale(-1,1);
+    position: relative;
 
     &:focus {
         outline: none;
@@ -85,7 +83,6 @@
         background-color: #093637;
         margin-bottom: 5px;
         width: 100%;
-        animation: animateWidth 1.1s linear infinite;
         @for $barIndex from 1 through 3 {
             &:nth-child(#{$barIndex}) {
                 animation-delay: .25s + ($barIndex * .25)/2;
@@ -95,6 +92,10 @@
     }
 
     .menu-bar--default {
+        opacity: 1;
+        animation: digitWave .8s linear infinite;
+        visibility: visible;
+        transition: opacity .2s ease-out .4s, visibility .4s ease-out .4s, width .2s ease-out .4s;
         &:before {
             content: '&nbsp;';
             font-size: 0;
@@ -108,18 +109,67 @@
     }
 
     .menu-bar--close {
-        display: none;
+        display: block;
+        margin-bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 40px;
+        transform: rotate(135deg);
+        background-color: $teal;
+        transition: opacity .3s ease-in 0s, visibility .3s ease-in 0s;
+
+        + .menu-bar--close {
+            transform: rotate(-135deg);
+        }
     }
 }
 
+.menu-cta--active {
+    &:hover {
+        // animation: morphX 1.75s ease-in-out;
+
+        .menu-bar--close {
+            animation: colorX (1.75s) ease-in-out infinite;
+        }
+    }
+
+    .menu-bar--default {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease-out 0s, visibility 0s ease-out 0s, width .2s ease-out 0s;
+    }
+
+    .menu-bar--close {
+        opacity: 1;
+        visibility: visible;
+        width: 40px;
+        transform: rotate(135deg);
+        transition: opacity .3s ease-in .2s, visibility .2s ease-in 0.2s;
+        border: none;
+
+        + .menu-bar--close {
+            // transform: rotate(-90deg);
+            // top: 19px;
+            // transition: opacity .4s ease-out, visibility .4s ease-out, width .4s ease-out;
+        }
+    }
+}
 
 /* toggle menu animations */
+
 @keyframes animateFullWidth {
     to {
         width: 100%;
     }
 }
-@keyframes animateWidth {
+
+@keyframes digitWave {
     0% {
         width: 100%;
     }
@@ -146,5 +196,40 @@
 
     100% {
         width: 100%;
+    }
+}
+
+@keyframes morphX {
+    50% {
+        transform: scale(0,0);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes colorX {
+    25% {
+        background-color: $aqua;
+    }
+
+    50% {
+        background-color: $mango;
+    }
+
+    75% {
+        background-color: $aqua;
+    }
+
+    100% {
+        background-color: $teal;
+    }
+}
+
+/* Mobile Menu active */
+.header--mobileActive {
+
+    .menu-cta__wrapper {
+        z-index: 4;
     }
 }
