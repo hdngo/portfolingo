@@ -20,9 +20,11 @@
     }
 
     .nav-line {
-        margin: 15px 0;
-        background-color: black;
-        flex: 1 1 auto;
+        @include min-bp($sm-desktop) {
+            margin: 15px 0;
+            background-color: black;
+            flex: 1 1 auto;
+        }
     }
 }
 
@@ -31,17 +33,27 @@
 }
 
 .nav-social__link {
-    margin-bottom: 30px;
-    display: block;
+    @include min-bp($sm-desktop) {
+        margin-bottom: 30px;
+        display: block;
+    }
 
     &:last-child {
-        margin-bottom: 0;
+        @include min-bp($sm-desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    svg {
+        font-size:1.5rem;
     }
 } 
 
 /* Mobile Styles */
 .header--mobileActive {
     .nav-right__wrapper {
-        visibility: hidden;
+        @include min-bp($sm-desktop) {
+            visibility: hidden;
+        }
     }
 }
