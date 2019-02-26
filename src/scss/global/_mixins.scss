@@ -9,13 +9,13 @@ $lg-desktop: 1920px;
 
 
 @mixin min-bp($breakpoint){
-    @media (min-width: $breakpoint) {
+    @media screen and (min-width: $breakpoint) {
         @content;
     }
 }
 
 @mixin max-bp($breakpoint) {
-    @media (max-width: $breakpoint) {
+    @media screen and (max-width: $breakpoint) {
         @content;
     }
 }
@@ -33,7 +33,7 @@ $lg-desktop: 1920px;
 }
 
 @mixin range-bp($breakpoint1, $breakpoint2) {
-    @media (min-width: $breakpoint1) and (max-width: $breakpoint2) {
+    @media screen and (min-width: $breakpoint1) and (max-width: $breakpoint2) {
         @content;
     }
 }

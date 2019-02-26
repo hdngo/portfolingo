@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                     }}
                     classNames='mobile-menu'
                 >
-                    <MobileMenu />
+                    <MobileMenu show={showMobileMenu} />
                 </CSSTransition>
             </header>
         )
