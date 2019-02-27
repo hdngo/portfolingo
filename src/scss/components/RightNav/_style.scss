@@ -12,42 +12,94 @@
         justify-content: stretch;
         height: calc(100vh - 137px - 50px);
         align-items: center;
-        visibility: visible;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .6s ease-in-out;
 
         > * {
             flex: 0 0 auto;
         }
+
     }
+
+    .nav-social {
+        .nav-social__link {
+            @include min-bp($sm-desktop) {
+                margin-bottom: 30px;
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+    
+                @for $i from 1 to 6 {
+                    &:nth-of-type(#{$i}) {
+                        $show-delay: .15s * ($i - 1);
+                        transition: opacity .3s ease-in $show-delay, visibility .3s ease-in $show-delay;
+                    }
+                }
+            }
+        
+            &:last-child {
+                @include min-bp($sm-desktop) {
+                    margin-bottom: 0;
+                }
+            }
+        
+            svg {
+                font-size:1.5rem;
+            }
+        } 
+    }
+    
 
     .nav-line {
         @include min-bp($sm-desktop) {
             margin: 15px 0;
-            background-color: black;
+            background-color: #1d5857;
             flex: 1 1 auto;
+            width: 2px;
+            flex-grow: 0;
+            opacity: 1;
+            visibility: hidden;
+            transition: flex-grow 1s linear (.15s * 5), visibility .5s linear (.15s * 5), opacity .5s linear (.15s * 5);
         }
     }
-}
 
-.nav-social {
-
-}
-
-.nav-social__link {
-    @include min-bp($sm-desktop) {
-        margin-bottom: 30px;
-        display: block;
-    }
-
-    &:last-child {
+    .page-indicator {
         @include min-bp($sm-desktop) {
-            margin-bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: scaleY(1.25);
+            transition: opacity .3s ease-in (1 + (.15s * 5)), visibility .3s ease-in (1 + (.15s * 5)),
+                        transform .3s ease-in (1 + (.15s * 5));
         }
     }
+}
 
-    svg {
-        font-size:1.5rem;
+.nav-right__wrapper-enter-done {
+    @include min-bp($sm-desktop) {
+        opacity: 1;
+        visibility: visible;
+
+        .nav-social {
+            .nav-social__link {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .nav-line {
+            opacity: 1;
+            visibility: visible;
+            flex-grow: 1;
+        }
+        
+        .page-indicator {
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+        }
     }
-} 
+}
 
 /* Mobile Styles */
 .header--mobileActive {

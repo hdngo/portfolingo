@@ -39,3 +39,11 @@ body {
     /* fluid font formula from csstricks */
     font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
 }
+
+#app {
+    height: 100%;
+    width: 100%;    
+}
+.pageBody {
+    background-color: #f4fffd;
+}

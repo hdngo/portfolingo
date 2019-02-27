@@ -20,7 +20,7 @@
     @include min-bp($sm-desktop) {
         float: left;
         height:100%;
-        margin-left: 3.5em;
+        margin-left: 5.5em;
         display: flex;
         align-items: flex-start;
     }
@@ -28,12 +28,21 @@
 
 .nav-left__link {
     @include min-bp($sm-desktop) {
-        margin-left: 6.5em;
+        margin-left: 9.5em;
         text-transform: uppercase;
-
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-5px);
+        transition: all .4s ease-in-out;
         &:first-child {
             margin-left: 0;
         }
+    }
+
+    &.nav-left__link-enter-done {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(5px);
     }
 }
 
