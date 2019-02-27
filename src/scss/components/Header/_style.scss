@@ -18,10 +18,12 @@
 
 .logo {
     z-index: 4;
+    color: black;
 }
 
 .nav__link {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: .05em;
 }
 
 .nav-primary__wrapper {
@@ -41,9 +43,19 @@
     text-transform: uppercase;
     padding: .5em .5em;
     margin-left: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all .4s ease-in-out;
 
     &:first-child {
         margin-left: 0;
+    }
+
+    &.nav-primary__link-enter-done {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(5px);
     }
 }
 

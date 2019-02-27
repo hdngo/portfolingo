@@ -25,7 +25,6 @@ class App extends React.Component {
     };
 
     this.hideSplash = this.hideSplash.bind(this);
-    this.showHome = this.showHome.bind(this);
   }
 
   componentDidMount() {
@@ -35,16 +34,12 @@ class App extends React.Component {
   }
 
   hideSplash() {
-    this.setState({showSplash: false});
-    this.showHome();
-  }
-
-  showHome() {
-    this.setState({showHome: true});
+    this.setState({showSplash: false, showHome: true});
   }
 
   render() {
     const showSplash = this.state.showSplash;
+    const showHome = this.state.showHome;
     if(showSplash) {
       return (
         <div className="pageBody">
