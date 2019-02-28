@@ -16,9 +16,12 @@
 @import './scss/components/LeftNav/style'; // LeftNav
 @import './scss/components/RightNav/style'; // RightNav
 
-/* Splashpage*/
+/* Splashpage */
 @import './scss/components/IntroText/style'; // IntroText
 @import './scss/components/IntroName/style'; // IntroName
+
+/* Nala */
+@import './scss/components/Nala/style';
 
 html {
     -webkit-font-smoothing: antialiased;

@@ -7,6 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import Header from './js/components/Header';
 import LeftNav from './js/components/LeftNav';
 import RightNav from './js/components/RightNav';
+// import Nala from './js/components/Nala';
 
 let app = document.createElement('div');
 app.id = 'app';
@@ -63,6 +64,7 @@ class App extends React.Component {
           <Header />
           <LeftNav />
           <RightNav />
+          {/* <Nala /> */}
         </div>
       )
     }
