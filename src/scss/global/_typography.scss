@@ -15,3 +15,7 @@ body, p, div, input, select {
 a {
     color: $teal;
 }
+
+.text-mango {
+    color: darken($mango, 2.5%);
+}

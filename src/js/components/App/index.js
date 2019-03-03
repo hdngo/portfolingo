@@ -11,6 +11,7 @@ import RightNav from '../RightNav';
 import Home from '../Home';
 import Work from '../Work';
 import Resume from '../Resume';
+import About from '../About';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const Nada = () => {
@@ -40,6 +41,7 @@ const PrimaryLayout = () => (
                         <Route exact path='/home' component={Home} />
                         <Route exact path='/work' component={Work} />
                         <Route exact path='/resume' component={Resume} />
+                        <Route exact path='/about-me' component={About} />
                         <Route component={Nada} />
                     </Switch>
                     </section>
