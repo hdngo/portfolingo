@@ -5,14 +5,15 @@
     @include min-bp($sm-desktop) {
         position: fixed;
         display: block;
-        width: 100vh;
+        width: calc(100vh - 137px);
         height: 60px;
         left: 80px;
-        top: auto;
+        top: 137px;;
         right: auto;
         bottom: auto;
         transform-origin: left top;
         transform: rotate(-90deg) translateX(-100%);
+        z-index: 2;
     }
 }
 
@@ -28,12 +29,13 @@
 
 .nav-left__link {
     @include min-bp($sm-desktop) {
+        font-family: $oswaldFont;
         margin-left: 9.5em;
         text-transform: uppercase;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-5px);
-        transition: all .4s ease-in-out;
+        transition: opacity .4s ease-in-out, visibility .4s ease-in-out, transform .4s ease-in-out;
         &:first-child {
             margin-left: 0;
         }
@@ -42,7 +44,7 @@
     &.nav-left__link-enter-done {
         opacity: 1;
         visibility: visible;
-        transform: translateY(5px);
+        transform: translateY(0px);
     }
 }
 

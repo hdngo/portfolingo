@@ -1,6 +1,7 @@
 import React from 'react';
 import MobileMenu from '../MobileMenu/';
 import Links from '../../../data/navLinks';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 export default class Header extends React.Component {
@@ -36,12 +37,12 @@ export default class Header extends React.Component {
                 key={`nav-left-transition-${item.id}`}
                 classNames='nav-primary__link'
             >
-                <a key={`nav-primary-link-${item.id}`}href={item.href} className='nav__link nav-primary__link' title={item.title}>{item.text}</a>
+                <Link key={`nav-primary-link-${item.id}`} to={item.href} className='nav__link nav-primary__link' title={item.title}>{item.text}</Link>
             </CSSTransition>
         ));
         return (
             <header id='header' className={`header ${this.state.showMobileMenu ? 'header--mobileActive' : 'header--mobileHidden'}`}>
-                <a className='logo' href="/">LOGO</a>
+                <Link className='logo' to="/home">LOGO</Link>
                 <div className='nav-primary__wrapper'>
                     <nav className='nav nav-primary'>
                         {mainLinkItems}
@@ -62,7 +63,7 @@ export default class Header extends React.Component {
                     timeout={{
                         appear: 0,
                         enter: 400,
-                        exit: 400,
+                        exit: 800,
                     }}
                     classNames='mobile-menu'
                 >

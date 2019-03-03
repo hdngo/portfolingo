@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class IntroName extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class IntroName extends React.Component {
     render() {
         return (
             <div className='introName'>
-                <a href="#" onClick={this.props.hideSplash}>
+                <Link to="/home" onClick={this.props.removeSplashPage}>
                     <svg viewBox="0 0 4300 3400" preserveAspectRatio='xMaxYMax meet'>
                         <symbol id="name">
                             <text textAnchor='middle' x="50%" y="35%" className='name--first' fontWeight='bold'>Harvey</text>
@@ -52,7 +53,7 @@ export default class IntroName extends React.Component {
                             <use xlinkHref="#name" className='name__outline--copy'></use>
                         </g>
                     </svg>
-                </a>
+                </Link>
             </div>
         )
     }

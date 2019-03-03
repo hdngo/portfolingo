@@ -2,9 +2,9 @@ export default  {
     Links: [
         {
             id: 0,
-            title: 'Projects',
-            href: '/projects',
-            text: 'Projects',
+            title: 'Work',
+            href: '/work',
+            text: 'Work',
             location: 'nav-primary'
         },
         {
@@ -57,14 +57,14 @@ export default  {
         {
             id: 7,
             title: 'Coming',
-            href: '#',
+            href: '/#',
             text: 'Coming',
             location: 'nav-left'
         },
         {
             id: 8,
             title: 'Soon',
-            href: '#',
+            href: '/#',
             text: 'Soon',
             location: 'nav-left',
         }

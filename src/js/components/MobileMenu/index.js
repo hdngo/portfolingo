@@ -1,6 +1,7 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Links from '../../../data/navLinks';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class MobileMenu extends React.Component {
@@ -9,7 +10,7 @@ export default class MobileMenu extends React.Component {
         this.state = {
             value: null,
             links: Links.Links,
-            show: this.props.show,
+            show: this.props.show
         }
     }
 
@@ -40,7 +41,7 @@ export default class MobileMenu extends React.Component {
                 timeout={500}
                 classNames='nav-mobile__link'
             >
-                <a key={`mobile-link-${item.id}`} href={item.href} className={`nav-mobile__link`} title={item.title}>{item.text}</a>
+                <Link key={`mobile-link-${item.id}`} to={item.href} className={`nav-mobile__link`} title={item.title}>{item.text}</Link>
             </CSSTransition>
         ));
         const socialItems = socialLinks.map((item, i) => (
@@ -51,9 +52,9 @@ export default class MobileMenu extends React.Component {
                 timeout={500}
                 classNames='nav-social__link'
             >
-                <a key={`mobile-social-link-${item.id}`} href={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title}>
+                <Link key={`mobile-social-link-${item.id}`} to={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title}>
                     <FontAwesomeIcon icon={['fab', `${item.fontawesome}`]} />
-                </a>
+                </Link>
             </CSSTransition>
         ));
         return(
