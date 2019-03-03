@@ -9,6 +9,7 @@
 @import './scss/pages/home'; // Home
 @import './scss/pages/splashpage'; // Splash
 @import './scss/pages/work'; // Work
+@import './scss/pages/resume'; // Resume
 
 /* Components */
 /* Global Components */
@@ -83,12 +84,12 @@ body {
     right: auto;
     bottom: auto;
     width: 100%;
-    padding: 110px 40px 0 40px;
+    padding: 110px 40px 80px 40px;
     @include range-bp($sm, $sm-desktop) {
-        padding: 110px 55px 0 55px;
+        padding: 110px 55px 80px 55px;
     }
     @include range-bp($sm-desktop, $lg-desktop) {
-        padding: 150px 150px 0 150px;
+        padding: 150px 150px 80px 150px;
     }
 }
 
@@ -103,4 +104,8 @@ body {
             font-size: 2.75rem;
         }
     }
+}
+
+.page-content .fohfour {
+    font-size: 4.5rem;
 }

@@ -1,0 +1,78 @@
+@import '../global/variables';
+@import '../global/mixins';
+@import '../global/animations';
+
+
+.page-content {
+    h1 {
+        .abridged {
+            display: inline-block;
+            font-weight: 300;
+            font-size: .75em;
+            color: darken($mango, 2.5%);
+            margin-left: 15px;
+            animation: simpleFade 1.2s ease-in;
+            transform: skewX(-10deg);
+        }
+    }
+}
+
+.resume {
+    margin-top: 50px;
+    > * {
+        font-family: $robotoFont;
+    }
+    
+    .resume-section {
+        margin: 15px 0;
+
+        > .resume-subsection:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .resume-subsection {
+        margin: 30px 0;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .resume-subsection-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    h2, h3 {
+        font-family: $poppinFont;
+        margin: 0;
+    }
+
+    h2 {
+        color: $teal;
+    }
+
+    h3 {
+        color: black;
+        span {
+            color: $teal;
+        }
+    }
+
+    .resume__timeframe {
+        color: black;
+
+        &.resume__timeframe--recent {
+            color: darken($mango, 2.5%);
+        }
+    }
+
+    .resume__details {
+        margin: 0;
+        font-size: .825rem;
+        font-family: $robotoFont;
+        width: 85%;
+    }
+
+}

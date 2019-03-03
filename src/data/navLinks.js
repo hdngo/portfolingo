@@ -56,9 +56,9 @@ export default  {
         },
         {
             id: 7,
-            title: 'Coming',
-            href: '/#',
-            text: 'Coming',
+            title: 'Resume',
+            href: '/resume',
+            text: 'Resume',
             location: 'nav-left'
         },
         {
