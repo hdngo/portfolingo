@@ -10,11 +10,14 @@ import LeftNav from '../LeftNav';
 import RightNav from '../RightNav';
 import Home from '../Home';
 import Work from '../Work';
+import Resume from '../Resume';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const Nada = () => {
     return (
-      <div>Nada</div>
+        <React.Fragment>
+            <h1 className='fohfour'>F0H4 Not found.</h1>
+        </React.Fragment>
     )
 }
 
@@ -36,6 +39,7 @@ const PrimaryLayout = () => (
                         <Route exact path='/' component={Home} />
                         <Route exact path='/home' component={Home} />
                         <Route exact path='/work' component={Work} />
+                        <Route exact path='/resume' component={Resume} />
                         <Route component={Nada} />
                     </Switch>
                     </section>
