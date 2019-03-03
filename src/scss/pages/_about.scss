@@ -1,0 +1,84 @@
+@import '../global/variables';
+@import '../global/typography';
+@import '../global/mixins';
+
+.profile {
+    .hat-panel {
+        display: inline-flex;
+        padding-left: 0;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+        @include min-bp($tablet) {
+            margin: 15px 0;
+        }
+
+        &:before {
+            content: '';
+            height: 2px;
+            background-color: $aqua;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 4px;
+        }
+        li {
+            list-style-type: none;
+
+            .hat-button {
+                height: 10px;
+                width: 10px;
+                background-color: $teal;
+                transform: rotate(45deg);
+                transition: background-color .5s ease-in-out, transform .5s ease-in-out;
+
+                &:hover {
+                    background-color: $mango;
+                    cursor: pointer;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    .profile-statement {
+        color: #777;
+        font-size: 1.5rem;
+        @include min-bp($sm) {
+            width: 60%;
+        }
+    }
+
+    .profile-slider {
+        min-height: 400px;
+        width: 100%;
+        position: relative;
+
+        @include range-bp($tablet, $desktop) {
+            min-height: 550px;
+        }
+    }
+
+    .profile-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: auto;
+        opacity: 0;
+        visibility: hidden;
+        height: 400px;
+        @include range-bp($tablet, $desktop) {
+            height: 550px;
+        }
+    }
+
+    .profile-slide--active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -10,6 +10,7 @@
 @import './scss/pages/splashpage'; // Splash
 @import './scss/pages/work'; // Work
 @import './scss/pages/resume'; // Resume
+@import './scss/pages/about'; // About
 
 /* Components */
 /* Global Components */
@@ -75,6 +76,7 @@ body {
 .page-body {
     position: relative;
     width: 100%;
+    min-height: 100vh;
 }
 
 .page-content {
@@ -95,6 +97,7 @@ body {
 
 .page-content {
     // overflow: auto;
+    min-height: 100vh;
     h1 {
         margin-top: 0;
         font-family: $oswaldFont;
