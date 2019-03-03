@@ -3,7 +3,7 @@
 
 .header {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     right: auto;
@@ -13,17 +13,19 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 50px 80px;
+    padding: 50px 80px 30px 80px;
 }
 
 .logo {
     z-index: 4;
     color: black;
+    font-family: $oswaldFont;
 }
 
 .nav__link {
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: .05em;
+    font-family: $oswaldFont;
 }
 
 .nav-primary__wrapper {
@@ -41,12 +43,13 @@
 
 .nav-primary__link {
     text-transform: uppercase;
+    font-family: $oswaldFont;
     padding: .5em .5em;
     margin-left: 60px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
-    transition: all .4s ease-in-out;
+    transition: opacity .4s ease-in-out, visibility .4s ease-in-out, transform .4s ease-in-out;
 
     &:first-child {
         margin-left: 0;
@@ -133,7 +136,7 @@
         width: 40px;
         transform: rotate(135deg);
         background-color: $teal;
-        transition: opacity .3s ease-in 0s, visibility .3s ease-in 0s;
+        transition: opacity .3s ease-in .3s, visibility .3s ease-in .3s;
 
         + .menu-bar--close {
             transform: rotate(-135deg);
@@ -143,8 +146,6 @@
 
 .menu-cta--active {
     &:hover {
-        // animation: morphX 1.75s ease-in-out;
-
         .menu-bar--close {
             animation: colorX (1.75s) ease-in-out infinite;
         }
@@ -158,18 +159,13 @@
     }
 
     .menu-bar--close {
+        display: block;
         opacity: 1;
         visibility: visible;
         width: 40px;
         transform: rotate(135deg);
         transition: opacity .3s ease-in .2s, visibility .2s ease-in 0.2s;
         border: none;
-
-        + .menu-bar--close {
-            // transform: rotate(-90deg);
-            // top: 19px;
-            // transition: opacity .4s ease-out, visibility .4s ease-out, width .4s ease-out;
-        }
     }
 }
 

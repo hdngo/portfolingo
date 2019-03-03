@@ -11,7 +11,7 @@
     right: auto;
     bottom: auto;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: white;
     padding: 140px 80px 50px 80px;
     transition: opacity .4s ease-in, visibility .4s ease-in;
@@ -40,7 +40,7 @@
     z-index: 3;
     opacity: 1;
     visibility: visible;
-    transition: opacity .4s ease-out, visibility .4s ease-out;
+    transition: opacity .8s ease-out, visibility .8s ease-out;
 }
 
 .mobile-menu-exit-done {
@@ -52,93 +52,106 @@
 .nav-mobile {
     flex: 0 0 auto;
 }
-
-.nav-mobile__link {
-    display: block;
-    clear: both;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    transition: all .5s ease-in-out;
-    transform: translate(-2px, 2px);
-    text-shadow: 2px 3px 5px hsla(179, 50%, 23%, 0);
-
-    @for $i from 1 to 5 {
-        &:nth-of-type(#{$i}) {
-            transition-delay: ($i) * .175s
-        }
-    }
-    @include min-bp($sm) {
-        display: inline-block;
-        font-size: 2.5rem;
-    }
-    
-    @include min-bp($sm-desktop) {
-        font-size: 3.75rem;
-        margin-bottom: 1.75rem;
-    }
-    
-    &:nth-child(odd) {
-        float: left;
-        @include min-bp($sm) {
-            float: left;
-        }
+.header--mobileHidden {
+    .nav-mobile {
+        display: none;
     }
 
-    &:nth-child(even) {
-        @include min-bp($sm) {
-            float: left;
-        }
-    }
-
-    &.nav-mobile__link-enter-done {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(2px, -2px);
-        text-shadow: 2px 3px 5px hsla(179, 50%, 23%, .4);
+    .mobile-menu .nav-social {
+        display: none;
     }
 }
 
-.mobile-menu .nav-social {
-    display: flex;
-    flex: 1 1 auto;
-    margin-top: 2.5rem;
-    align-items: flex-end;
-    @include min-bp($sm) {
-        justify-content: flex-end;
-    }
-}
+.header--mobileActive {
 
-.mobile-menu .nav-social__link {
-    margin: 0 1.75rem 0 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(5px);
-    transition: .5s all ease-in-out;
-    @for $i from 1 to 6 {
-        &:nth-of-type(#{$i}) {
-            transition-delay: .5s / ($i);
+    .nav-mobile__link {
+        display: block;
+        font-family: $oswaldFont;
+        clear: both;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        transition: opacity .5s ease-in-out, visibility .5s ease-in-out, transform .5s ease-in-out, text-shadow .5s ease-in-out;
+        transform: translate(-2px, 2px);
+        text-shadow: 2px 3px 5px hsla(179, 50%, 23%, 0);
+    
+        @for $i from 1 to 5 {
+            &:nth-of-type(#{$i}) {
+                transition-delay: ($i) * .175s
+            }
         }
-    }
-    @include min-bp($sm-desktop) {
-        margin: 0 0 0 2.25rem;
-    }
-    svg {
-        font-size: 1.5rem;
-
         @include min-bp($sm) {
-            font-size: 1.75rem;
+            display: inline-block;
+            font-size: 2.5rem;
         }
-
-        @include min-bp($tablet) {
-            font-size: 2rem;
+        
+        @include min-bp($sm-desktop) {
+            font-size: 3.75rem;
+            margin-bottom: 1.75rem;
+        }
+        
+        &:nth-child(odd) {
+            float: left;
+            @include min-bp($sm) {
+                float: left;
+            }
+        }
+    
+        &:nth-child(even) {
+            @include min-bp($sm) {
+                float: left;
+            }
+        }
+    
+        &.nav-mobile__link-enter-done {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, 0);
+            text-shadow: 2px 3px 5px hsla(179, 50%, 23%, .4);
         }
     }
-
-    &.nav-social__link-enter-done {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(-5px);
+    
+    .mobile-menu .nav-social {
+        display: flex;
+        flex: 1 1 auto;
+        margin-top: 2.5rem;
+        align-items: flex-end;
+        @include min-bp($sm) {
+            justify-content: flex-end;
+        }
+    }
+    
+    .mobile-menu .nav-social__link {
+        margin: 0 1.75rem 0 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(5px);
+        transition: opacity .5s ease-in-out, visibility .5s ease-in-out, transform .5s ease-in-out;
+        @for $i from 1 to 6 {
+            &:nth-of-type(#{$i}) {
+                transition-delay: .5s / ($i);
+            }
+        }
+        @include min-bp($sm-desktop) {
+            margin: 0 0 0 2.25rem;
+        }
+        svg {
+            font-size: 1.5rem;
+    
+            @include min-bp($sm) {
+                font-size: 1.75rem;
+            }
+    
+            @include min-bp($tablet) {
+                font-size: 2rem;
+            }
+        }
+    
+        &.nav-social__link-enter-done {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
     }
 }

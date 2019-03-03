@@ -15,6 +15,7 @@ export default class RightNav extends React.Component {
 
     componentDidMount() {
         this.setState({show: true});
+        console.log('rendered');
     }
 
     render() {
@@ -32,6 +33,7 @@ export default class RightNav extends React.Component {
                 show={{show}}
                 timeout={600}
                 classNames='nav-right__wrapper'
+                unmountOnExit
             >
                 <aside className='nav-right__wrapper'>
                     <nav className='nav nav-right nav-social'>

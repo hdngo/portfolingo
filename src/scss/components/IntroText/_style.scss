@@ -7,6 +7,9 @@
     color: white;
     letter-spacing: .05em;
     line-height: 1;
+    text-shadow: 3px 3px 1px hsla(177, 57%, 40%, 0), -2px -1px 0px hsla(187, 75%, 36%, 0);
+    animation: trampoline .9s ease-in-out, showShadow .9s ease-in 1.5s forwards;
+    // animation: showShadow .9s .5s ease-in forwards;
 
     .introText--large:first-of-type {
         transform: rotate(-5deg);
@@ -40,30 +43,9 @@
     }
 }
 
-/* Enter */
-.introText.introText-appear {
-    /* learning note: animation duration has to be <= specified timeout in csstransition
-    can increase length of duration but have to update cssT timeout as well.
-    doing so SEEMS to increase delay between enter-active and enter-done styles */
-    animation: trampoline .9s ease-in-out;
-}
-
-.introText.introText-enter-active {
-    text-shadow: 3px 3px 1px hsla(177, 57%, 40%, 0), -2px -1px 0px hsla(187, 75%, 36%, 0);
-}
-
-.introText.introText-enter-done {
-    animation: showShadow .9s .5s ease-in forwards;
-}
-
-.introText.introText-exit-active {
-    opacity: 1;
-    transition: opacity .5s ease-out;
-}
-
-.introText-exit-done {
-    opacity: 0;
-}
+/* learning note: animation duration has to be <= specified timeout in csstransition
+can increase length of duration but have to update cssT timeout as well.
+doing so SEEMS to increase delay between enter-active and enter-done styles */
 
 /* Trampoline Animation */
 @keyframes trampoline {

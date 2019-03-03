@@ -8,6 +8,7 @@
 /* Page Specific */
 @import './scss/pages/home'; // Home
 @import './scss/pages/splashpage'; // Splash
+@import './scss/pages/work'; // Work
 
 /* Components */
 /* Global Components */
@@ -25,14 +26,13 @@
 
 html {
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
 }
 
 *, :before, :after {
     box-sizing: border-box;
 }
 
-html, body, .pageBody {
+html, body, .page-body {
     height: 100%;
     width: 100%;
     line-height: normal;
@@ -40,13 +40,67 @@ html, body, .pageBody {
 
 body {
     /* fluid font formula from csstricks */
-    font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
 }
 
 #app {
-    height: 100%;
+    // height: 100%;
     width: 100%;    
 }
-.pageBody {
-    background-color: #f4fffd;
+
+.page-layout {
+    position: relative;
+    // height: 100%;
+    width: 100%;
+}
+
+.page-enter {
+    opacity: 0.01;
+}
+
+.page-enter.page-enter-active {
+    opacity: 1;
+    transition: opacity 600ms ease-in;
+}
+
+.page-exit {
+    opacity: 1;
+}
+
+.page-exit.page-exit-active {
+    opacity: .01;
+    transition: opacity 600ms ease-in;
+}
+
+.page-body {
+    position: relative;
+    width: 100%;
+}
+
+.page-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 110px 40px 0 40px;
+    @include range-bp($sm, $sm-desktop) {
+        padding: 110px 55px 0 55px;
+    }
+    @include range-bp($sm-desktop, $lg-desktop) {
+        padding: 150px 150px 0 150px;
+    }
+}
+
+.page-content {
+    // overflow: auto;
+    h1 {
+        margin-top: 0;
+        font-family: $oswaldFont;
+        text-transform: uppecase;
+        letter-spacing: .05em;
+        @include min-bp($sm-desktop) {
+            font-size: 2.75rem;
+        }
+    }
 }
