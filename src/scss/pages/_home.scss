@@ -1,0 +1,49 @@
+@import '../global/variables';
+@import '../global/mixins';
+@import '../global/typography';
+
+.nalas-playpen {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 110px 40px 80px 40px;
+    @include range-bp($sm, $sm-desktop) {
+        padding: 110px 55px 80px 55px;
+    }
+    @include range-bp($sm-desktop, $lg-desktop) {
+        padding: 150px 150px 80px 150px;
+    }
+    .nala-svg {
+        width: 40%;
+        height: auto;
+        max-width: 100%;
+
+        polygon {
+            opacity: 0;
+            visibility: hidden;
+            animation: showNala 10ms cubic-bezier(.83,.67,.83,.67) forwards;
+
+            @for $i from 1 to 721 {
+                &:nth-of-type(#{$i}) {
+                    animation-delay: 10ms * $i;
+                }
+            }
+        }
+    }
+}
+
+@keyframes showNala {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{ 
+        visibility: visible;
+        opacity: 1;
+    }
+}

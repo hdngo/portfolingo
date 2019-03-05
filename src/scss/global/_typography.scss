@@ -19,3 +19,17 @@ a {
 .text-mango {
     color: darken($mango, 2.5%);
 }
+
+.text-teal {
+    color: $teal;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+// .sm-desktop--down {
+//     @include min-range($sm-dektop) {
+//         display: none;
+//     }
+// }
