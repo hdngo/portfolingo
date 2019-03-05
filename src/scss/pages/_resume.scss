@@ -10,9 +10,11 @@
             font-weight: 300;
             font-size: .75em;
             color: darken($mango, 2.5%);
-            margin-left: 15px;
             animation: simpleFade 1.2s ease-in;
             transform: skewX(-10deg);
+            @media screen and (min-width: 404px) {
+                margin-left: 15px;
+            }
         }
     }
 }

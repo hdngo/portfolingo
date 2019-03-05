@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Links from '../../../data/navLinks';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class MobileMenu extends React.Component {
@@ -32,7 +32,7 @@ export default class MobileMenu extends React.Component {
         const show = this.state.show;
         const primaryLinks = this.state.links.filter(link => link.location != 'nav-social');
         const socialLinks = this.state.links.filter(link => link.location == 'nav-social');
-
+        
         const primaryItems = primaryLinks.map((item, i) => (
             <CSSTransition
                 in={show}
@@ -41,7 +41,7 @@ export default class MobileMenu extends React.Component {
                 timeout={500}
                 classNames='nav-mobile__link'
             >
-                <Link key={`mobile-link-${item.id}`} to={item.href} className={`nav-mobile__link`} title={item.title}>{item.text}</Link>
+                <NavLink key={`mobile-link-${item.id}`} to={item.href} exact className={`nav-mobile__link`} activeClassName={`nav-mobile__link--active`} title={item.title}>{item.text}</NavLink>
             </CSSTransition>
         ));
         const socialItems = socialLinks.map((item, i) => (
@@ -52,9 +52,9 @@ export default class MobileMenu extends React.Component {
                 timeout={500}
                 classNames='nav-social__link'
             >
-                <Link key={`mobile-social-link-${item.id}`} to={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title}>
+                <a key={`mobile-social-link-${item.id}`} href={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title} target='_blank'>
                     <FontAwesomeIcon icon={['fab', `${item.fontawesome}`]} />
-                </Link>
+                </a>
             </CSSTransition>
         ));
         return(

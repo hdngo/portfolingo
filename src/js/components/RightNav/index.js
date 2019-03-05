@@ -22,7 +22,7 @@ export default class RightNav extends React.Component {
         const show = this.state.show;
         const socialLinks = this.state.links.filter(link => link.location == 'nav-social');
         const socialItems = socialLinks.map((item, i) => (
-            <a key={`nav-right-link-${item.id}`} href={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title}>
+            <a key={`nav-right-link-${item.id}`} href={item.href} className={`nav-social__link nav-social__link--${item.title.toLowerCase()}`} title={item.title} target='_blank'>
                 <FontAwesomeIcon icon={['fab', `${item.fontawesome}`]} />
             </a>
         ));
@@ -40,7 +40,7 @@ export default class RightNav extends React.Component {
                         {socialItems}
                     </nav>
                     <div className='nav-line'></div>
-                    <div className='page-indicator'>H</div>
+                    <div className='mail-link'><a href='mailto:harveydngo@gmail.com' title='say hi!'>hi</a></div>
                 </aside>
             </CSSTransition>
         )
