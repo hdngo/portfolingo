@@ -1,10 +1,10 @@
 import React from 'react';
 import MobileMenu from '../MobileMenu/';
 import Links from '../../../data/navLinks';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,10 +18,17 @@ export default class Header extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({showHeaderLinks: true});
+        this.setState({showHeaderLinks: true, showMobileMenu: false});
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.setState({showMobileMenu: false});
+        }
     }
 
     toggleMobileMenu() {
+        console.log('?');
         this.setState({showMobileMenu: !this.state.showMobileMenu});
     }
 
@@ -42,7 +49,7 @@ export default class Header extends React.Component {
         ));
         return (
             <header id='header' className={`header ${this.state.showMobileMenu ? 'header--mobileActive' : 'header--mobileHidden'}`}>
-                <Link className='logo' to="/home">LOGO</Link>
+                <Link className='logo' to="/home"><span>HN</span></Link>
                 <div className='nav-primary__wrapper'>
                     <nav className='nav nav-primary'>
                         {mainLinkItems}
@@ -67,9 +74,11 @@ export default class Header extends React.Component {
                     }}
                     classNames='mobile-menu'
                 >
-                    <MobileMenu show={showMobileMenu} />
+                    <MobileMenu show={showMobileMenu}/>
                 </CSSTransition>
             </header>
         )
     }
 }
+
+export default withRouter(props => <Header {...props} />);

@@ -69,7 +69,7 @@ export default class Resume extends React.Component {
                             </div>
                             <p className='resume__details'>HTML5, CSS3, JavaScript, jQuery, Bootstrap, Ruby, Rails, WordPress, EPiServer, PHP, SASS, C#, ASP.NET, SQL, Angular 2, Gulp, ActiveRecord, PostgreSQL, jQuery Mobile, RSpec, Git, Bitbucket, Jira, Team Foundation Server, Heroku</p>
                             <br/>
-                            <p className='resume__details'><bold>Current focuses/interests:</bold>React, WebGL, D3, GSAP, Anime, CSS Grid</p>
+                            <p className='resume__details'><strong>Current focuses/interests:</strong>React, WebGL, D3, GSAP, Anime, CSS Grid</p>
                         </article>
                         <article className='resume-subsection resume__work'>
                             <div className='resume-subsection-header'>

@@ -63,9 +63,9 @@ export default  {
         },
         {
             id: 8,
-            title: 'Soon',
-            href: '/#',
-            text: 'Soon',
+            title: 'Contact',
+            href: '/contact-me',
+            text: 'Contact',
             location: 'nav-left',
         }
     ]

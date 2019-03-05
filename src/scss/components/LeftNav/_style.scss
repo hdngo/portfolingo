@@ -34,10 +34,47 @@
         text-transform: uppercase;
         opacity: 0;
         visibility: hidden;
+        position: relative;
         transform: translateY(-5px);
         transition: opacity .4s ease-in-out, visibility .4s ease-in-out, transform .4s ease-in-out;
         &:first-child {
             margin-left: 0;
+        }
+
+        &:before {
+            content: '';
+            height: 2px;
+            width: 0;
+            position: absolute;
+            bottom: 100%;
+            top: auto;
+            left: 0;
+            right: auto;
+            background-color: $aqua;
+            transition: width .4s ease-in-out;
+        }
+
+        &:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            position: absolute;
+            top: calc(100% + 2px);
+            bottom: auto;
+            left: auto;
+            right: 0;
+            background-color: $aqua;
+            transition: width .4s ease-in-out;
+        }
+
+        &:hover {
+            &:before {
+                width: 100%;
+            }
+
+            &:after {
+                width: 100%;
+            }
         }
     }
 
