@@ -13,7 +13,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',  
   entry: {
-      app: ['./src/index.js', './src/app.scss']
+    //   app: ['./src/index.js', './src/app.scss']
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -83,9 +83,7 @@ module.exports = {
           filename: "[name].css", // use [name][has].css for prod
           chunkFilename: "[id].css"
       }),
-      new HtmlWebpackPlugin({favicon: './src/images/favicon.ico',
-                             template: path.resolve('./index.html')
-                            }),
+      new HtmlWebpackPlugin({favicon: './src/images/favicon.ico', template: path.resolve('./index.html'),}),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.LoaderOptionsPlugin({
           options: {
