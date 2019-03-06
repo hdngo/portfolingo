@@ -72,7 +72,7 @@ module.exports = {
   },
   plugins: [
     // 
-      new Dotenv(),
+    //   new Dotenv(),
       new CleanWebpackPlugin(['build']),
       new CopyPlugin([
         { from: './src/images/favicon.ico' },
@@ -83,7 +83,9 @@ module.exports = {
           filename: "[name].css", // use [name][has].css for prod
           chunkFilename: "[id].css"
       }),
-      new HtmlWebpackPlugin({favicon: './src/images/favicon.ico'}),
+      new HtmlWebpackPlugin({favicon: './src/images/favicon.ico',
+                             template: path.resolve('./index.html')
+                            }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.LoaderOptionsPlugin({
           options: {
