@@ -73,7 +73,7 @@ module.exports = {
   plugins: [
     // 
       new Dotenv(),
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(['build']),
       new CopyPlugin([
         { from: './src/images/favicon.ico' },
       ]),
