@@ -1,5 +1,6 @@
 import React from 'react';
 import SplashPage from '../SplashPage';
+import { CSSTransition } from 'react-transition-group';
 
 function withSplashPage(WrappedComponent) {
     return class extends React.Component {
@@ -17,7 +18,7 @@ function withSplashPage(WrappedComponent) {
                 this.setState({
                     loading: false,
                 });
-            }, 5000)
+            }, 6000)
         }
 
         removeSplashPage() {
@@ -25,7 +26,12 @@ function withSplashPage(WrappedComponent) {
         }
 
         render() {
-            return this.state.loading ? <SplashPage removeSplash={this.removeSplashPage} /> : <WrappedComponent {...this.props} />
+            const showSplash = this.state.loading;
+            return showSplash ? 
+                <CSSTransition in={showSplash} show={{showSplash}.toString()} classNames='splashPage' timeout={{enter:0, exit: 600}} unmountOnExit>
+                    <SplashPage removeSplash={this.removeSplashPage} />
+                </CSSTransition> : 
+                <WrappedComponent {...this.props} />
         }
     }
 }
