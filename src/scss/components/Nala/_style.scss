@@ -1,80 +1,49 @@
 @import '../../global/variables';
 @import '../../global/mixins';
+@import '../../global/typography';
 
-/*
 .nalas-playpen {
+    display: flex;
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-
-    @include range-bp($sm, $desktop) {
-        padding: 55px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 110px 40px 80px 40px;
+    @include range-bp($sm, $sm-desktop) {
+        padding: 110px 55px 80px 55px;
     }
-    @include min-bp($desktop) {
-        padding: 150px 160px;
+    @include range-bp($sm-desktop, $lg-desktop) {
+        padding: 150px 150px 80px 150px;
     }
-    .nala {
-        width: 300px;
-        height: 150px;
-        margin: 0 auto;
-        position: relative;
-        background-color: $teal;
-        @include range-bp($sm, $tablet) {
-            width: 440px;
-            height: 220px;
-        }
-    
-        @include range-bp($tablet, $sm-desktop) {
-            width: 700px;
-            height: 350px;
-        }
-    
-        @include range-bp($sm-desktop, $desktop) {
-            width: 780px;
-            height: 390px;
-        }
-    
-        @include range-bp($desktop, $lg-desktop) {
-            width: 1100px;
-            height: 550px;
-        }
+    .nala-svg {
+        width: 40%;
+        height: auto;
+        max-width: 100%;
 
-        .nala-fur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            &:nth-child(1) {
-                -webkit-clip-path: polygon(16.25% 55.5%, 19.5% 47.5%, 20.5% 53.5%);
-                clip-path: polygon(16.25% 55.5%, 19.5% 47.5%, 20.5% 54.5%);
-                background-color: rgb(247, 207, 121);
-                z-index: 1;
-            }
+        polygon {
+            opacity: 0;
+            visibility: hidden;
+            animation: showNala 5ms cubic-bezier(.17,.67,.83,.97) forwards;
 
-            &:nth-child(2) {
-                -webkit-clip-path: polygon(16.25% 55.5%, 24% 29%, 20.5% 52%);
-                clip-path: polygon(16.25% 55.5%, 24% 29%, 20.5% 52%);
-                background-color: rgb(247, 207, 121);
-                z-index: 2;
-            }
-
-            &:nth-child(3) {
-                -webkit-clip-path: polygon(21.5% 35%, 24% 25%, 19% 63%);
-                clip-path: polygon(21.5% 37.5%, 23% 62%, 19% 63%);
-                background-color:rgb(247, 207, 121);
-                z-index: 1;
-            }
-
-            &:nth-child(4) {
-                -webkit-clip-path: polygon(20% 60%, 22.5% 31%, 31.25% 19%);
-                clip-path: polygon(20% 60%, 22.5% 31%, 31.25% 19%);
-                background-color: rgb(247, 207, 121);
-                z-index: 2;
+            @for $i from 1 to 721 {
+                &:nth-of-type(#{$i}) {
+                    animation-delay: 5ms * $i;
+                }
             }
         }
     }
-}*/
+}
+
+@keyframes showNala {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{ 
+        visibility: visible;
+        opacity: 1;
+    }
+}

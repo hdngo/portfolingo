@@ -27,3 +27,12 @@
         animation-delay: 1.5s;
     }
 }
+
+.splashPage-exit {
+    opacity: 1;
+    transition: opacity 600ms ease-out;
+}
+
+.splashPage-exit-done {
+    opacity: 0;
+}
