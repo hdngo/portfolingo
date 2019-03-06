@@ -1,86 +1,99 @@
+import YamahaBicyclesImage from '../images/yamahabicycles.PNG';
+import YamahaBoatsImage from '../images/yamahaboats.PNG';
+import YamahaWaverunnersImage from '../images/yamahawaverunners.PNG';
+import YamahaFinanceImage from '../images/yamahafinance.PNG';
+import WSCImage from '../images/woodstockchimes.PNG';
+import LibertyImage from '../images/libertyfurniture.PNG';
+import LucidImage from '../images/lucidcandles.PNG';
+import IvystoneImage from '../images/ivystone.PNG';
+import MadegoodsImage from '../images/madegoods.PNG';
+import CurreyImage from '../images/currey.PNG';
+import MudpieImage from '../images/mudpie.PNG';
+import MudpieWholesaleImage from '../images/mudpiewholesale.png';
+
 export default [
     {
         id: 1,
         title: 'Yamaha E-Bikes',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo lectus, blandit non lorem et, convallis scelerisque neque.',
+        description: 'Primary Front End Developer for the new e-bikes line website til the site launched. Post-launch, worked on support tasks and new feature development including the store locator page with autocomplete functionality.',
         link: 'https://www.yamahabicycles.com/',
-        image: 'src/images/yamaha-bicycles.PNG'
+        image: YamahaBicyclesImage
     },
     {
         id: 2,
         title: 'Yamaha Boats',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo lectus, blandit non lorem et, convallis scelerisque neque.',
+        description: 'Primary developer for the 2017 and 2018 site involving implementing new designs for the product pages, navigational menus, and finance calculator.',
         link: 'https://www.yamahaboats.com/',
-        image: 'src/images/yamaha-bicycles.PNG'
+        image: YamahaBoatsImage
     },
     {
         id: 3,
         title: 'Yamaha Waverunners',
-        description: 'E-commerce',
+        description: 'Similar to Yamaha Boats, handled 2017 and 2018 design updates.',
         link: 'https://yamahawaverunners.com/',
-        image: 'src/images/yamaha-waverunners.PNG'
+        image: YamahaWaverunnersImage
     },
     {
         id: 4,
         title: 'Yamaha Finance',
-        description: 'E-commerce',
-        link: 'https://www.yamaha-motor-yes.com/',
-        image: 'src/images/yamaha-finance.PNG'
+        description: 'Acted as support and new feature developer post-launch, implementing new designs for checkout process and upgraded finance calculator feature.',
+        link: 'http://yamaha-motor-yes.com/',
+        image: YamahaFinanceImage
     },
     {
         id: 5,
-        title: 'Woodstock Chimes B2C',
-        description: 'E-commerce',
+        title: 'Woodstock Chimes',
+        description: 'Worked as primary developer on B2C website til launch, developed custom inventory worksheets, audio feature, and CMSable product filter.',
         link: 'https://woodstockchimes.com/',
-        image: 'src/images/woodstock-chimes'
+        image: WSCImage
     },
     {
         id: 6,
         title: 'Liberty Furniture Industries Inc',
-        description: 'E-commerce',
+        description: 'Worked as primary developer on website til launch, implemented custom product sorting and filtering.',
         link: 'https://www.mylibertyfurniture.com/',
-        image: 'src/images/liberty-furniture'
+        image: LibertyImage
     },
     {
         id: 7,
         title: 'Lucid Candles',
-        description: 'E-commerce',
+        description: 'Handled legacy platform upgrade while documenting steps to be used for future site upgrades; worked on mobile & tablet specific feature designs.',
         link: 'https://www.lucidcandle.com',
-        image: 'src/images/lucid-candles'
+        image: LucidImage
     },
     {
         id: 8,
         title: 'Ivystone',
-        description: 'E-commerce',
+        description: 'Took over as primary developer to complete project, worked on website til launch in addition to implementing custom multi-shopping cart feature used for future websites.',
         link: 'https://www.ivystone.com/',
-        image: '~/src/images/ivystone.PNG'
+        image: IvystoneImage
     },
     {
         id: 9,
         title: 'Made Goods',
-        description: 'E-commerce',
+        description: 'Worked on Vanilla JS implementation of a product image zoom feature that was ported into React and reused on other sites.',
         link: 'https://www.madegoods.com/',
-        image: 'src/images/madegoods.PNG'
+        image: MadegoodsImage
     },
     {
         id: 10,
         title: 'Currey and Company',
-        description: 'E-commerce, WIP',
+        description: 'Disclaimer: This site is still in ative development. Worked as primary developer on e-commerce site, integrating with new features such as image resizer, custom product zoom and product slider, and documented platform site bug solutions which were later used to resolve core platform issues.',
         link: 'http://curreystaging.whereowaretest.com/splash-page/',
-        image: 'src/images/currey.PNG'
+        image: CurreyImage
     },
     {
         id: 11,
         title: 'Mud Pie',
-        description: 'E-commerce',
+        description: 'Focused on support, tag manager scripts, and ADA compliance issues.',
         link: 'https://www.mud-pie.com/',
-        image: 'src/images/mudpie.PNG'
+        image: MudpieImage
     },
     {
         id: 12,
         title: 'Mud Pie Wholesale',
-        description: 'E-commerce',
+        description: 'Focused on support, tag manager scripts, and ADA compliance issues.',
         link: 'https://wholesale.mud-pie.com',
-        image: 'src/images/mudpie-wholesale.PNG'
+        image: MudpieWholesaleImage
     },
 ];

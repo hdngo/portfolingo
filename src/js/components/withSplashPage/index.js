@@ -18,7 +18,7 @@ function withSplashPage(WrappedComponent) {
                 this.setState({
                     loading: false,
                 });
-            }, 6000)
+            }, 5200)
         }
 
         removeSplashPage() {

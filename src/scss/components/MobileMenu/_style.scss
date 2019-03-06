@@ -129,10 +129,12 @@
         }
         
         &:hover {
-            color: darken($aqua, 5.5%);
+            color: lighten($aqua, 2.5%);
+            @include min-bp($sm-desktop) {
+                color: darken($aqua, 5.5%);
+            }
             &:after {
                 content: '';
-                width: 120%;
                 height: .75rem;
                 position: absolute;
                 bottom: .4875rem;
@@ -142,6 +144,10 @@
                 opacity: 1;
                 visibility: visible;
                 background: linear-gradient(135deg, rgba(9, 56, 57, .8), rgba(68, 160, 142, .8)); 
+                width: 100%;
+                @include min-bp($sm-desktop) {
+                    width: 120%;
+                }
             }
         }
 

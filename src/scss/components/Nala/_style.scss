@@ -6,18 +6,9 @@
     display: flex;
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 110px 40px 80px 40px;
-    @include range-bp($sm, $sm-desktop) {
-        padding: 110px 55px 80px 55px;
-    }
-    @include range-bp($sm-desktop, $lg-desktop) {
-        padding: 150px 150px 80px 150px;
-    }
+    
     .nala-svg {
         width: 40%;
         height: auto;

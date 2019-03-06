@@ -2,7 +2,7 @@
 @import '../../global/mixins';
 
 .header {
-    position: absolute;
+    position: fixed;
     z-index: 3;
     top: 0;
     left: 0;
@@ -13,12 +13,19 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 30px;
+    padding: 20px 30px;
+    background-color: white;
+    
     @include min-bp($sm) {
-        padding: 30px 50px;
+        padding: 20px 50px;
     }
     @include min-bp($sm-desktop) {
-        padding: 30px 80px 30px 80px;
+        padding: 20px 80px 20px 80px;
+    }
+
+    &.header--showBorder {
+        border-bottom: 1px solid black;
+        background-color: white;
     }
 }
 
