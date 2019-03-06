@@ -9,7 +9,7 @@ import IvystoneImage from '../images/ivystone.PNG';
 import MadegoodsImage from '../images/madegoods.PNG';
 import CurreyImage from '../images/currey.PNG';
 import MudpieImage from '../images/mudpie.PNG';
-import MudpieWholesaleImage from '../images/mudpiewholesale.png';
+import MudpieWholesaleImage from '../images/mudpiewholesale.PNG';
 
 export default [
     {

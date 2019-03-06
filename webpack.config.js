@@ -1,4 +1,4 @@
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,7 +8,7 @@ const autoprefixer = require('autoprefixer');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
+// const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: 'development',  
