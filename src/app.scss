@@ -6,23 +6,23 @@
 @import './scss/global/animations';
 
 /* Page Specific */
-@import './scss/pages/home'; // Home
-@import './scss/pages/splashpage'; // Splash
-@import './scss/pages/work'; // Work
-@import './scss/pages/resume'; // Resume
-@import './scss/pages/about'; // About
-@import './scss/pages/contact'; // Contact
+@import './scss/pages/home';
+@import './scss/pages/splashpage';
+@import './scss/pages/work';
+@import './scss/pages/resume';
+@import './scss/pages/about';
+@import './scss/pages/contact';
 
 /* Components */
 /* Global Components */
-@import './scss/components/Header/style'; // Header
-@import './scss/components/MobileMenu/style'; // MobileMenu
-@import './scss/components/LeftNav/style'; // LeftNav
-@import './scss/components/RightNav/style'; // RightNav
+@import './scss/components/Header/style';
+@import './scss/components/MobileMenu/style';
+@import './scss/components/LeftNav/style';
+@import './scss/components/RightNav/style';
 
 /* Splashpage */
-@import './scss/components/IntroText/style'; // IntroText
-@import './scss/components/IntroName/style'; // IntroName
+@import './scss/components/IntroText/style';
+@import './scss/components/IntroName/style';
 
 /* Nala */
 @import './scss/components/Nala/style';
@@ -41,6 +41,7 @@ html, body, .page-body {
 }
 
 body {
+    user-select: none;
 }
 
 #app {  
