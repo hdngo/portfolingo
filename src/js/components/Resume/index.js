@@ -19,7 +19,7 @@ export default class Resume extends React.Component {
                         </div>
                         <article className='resume-subsection resume__work'>
                             <div className='resume-subsection-header'>
-                                <h3 className='resume-subsection__title'>Frontend Developer / <span>Whereoware</span></h3>
+                                <h3 className='resume-subsection__title'>Frontend Developer / <a href='https://www.whereoware.com/'><span>Whereoware</span></a></h3>
                                 <span className='resume__timeframe resume__timeframe--recent'>2017 - 2019</span>
                                 <p className='resume__details'>Implemented designs and features for client websites including Yamaha and Woodstock Chimes.
                                     <br/>
@@ -29,14 +29,14 @@ export default class Resume extends React.Component {
                         </article>
                         <article className='resume-subsection resume__work'>
                             <div className='resume-subsection-header'>
-                                <h3 className='resume-subsection__title'>UX Developer / <span>Cambridge Associates</span></h3>
+                                <h3 className='resume-subsection__title'>UX Developer / <a href='https://www.cambridgeassociates.com/'><span>Cambridge Associates</span></a></h3>
                                 <span className='resume__timeframe'>2016 - 2017</span>
                             </div>
                             <p className='resume__details'>Implemented public site redesign, created custom Bootstrap 4 framework, and created responsive email templates.</p>
                         </article>
                         <article className='resume-subsection resume__work'>
                             <div className='resume-subsection-header'>
-                                <h3 className='resume-subsection__title'>Consultant, Jr. Developer / <span>Booz Allen Hamilton</span></h3>
+                                <h3 className='resume-subsection__title'>Consultant, Jr. Developer / <a href='https://www.boozallen.com/'><span>Booz Allen Hamilton</span></a></h3>
                                 <span className='resume__timeframe'>2014-2015</span>
                             </div>
                             <p className='resume__details'>Implemented features for Department of Justice website and assisted with QA.</p>

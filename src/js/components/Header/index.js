@@ -28,7 +28,6 @@ class Header extends React.Component {
     }
 
     toggleMobileMenu() {
-        console.log('?');
         this.setState({showMobileMenu: !this.state.showMobileMenu});
     }
 

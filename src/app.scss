@@ -36,24 +36,18 @@ html {
 }
 
 html, body, .page-body {
-    height: 100%;
     width: 100%;
     line-height: normal;
 }
 
 body {
-    /* fluid font formula from csstricks */
 }
 
-#app {
-    // height: 100%;
-    width: 100%;    
+#app {  
 }
 
 .page-layout {
     position: relative;
-    // height: 100%;
-    width: 100%;
 }
 
 .page-enter {
@@ -74,6 +68,8 @@ body {
     transition: opacity 600ms ease-in;
 }
 
+.page {
+}
 .page-body {
     position: relative;
     width: 100%;
@@ -81,12 +77,12 @@ body {
 }
 
 .page-content {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     right: auto;
     bottom: auto;
-    width: 100%;
     padding: 110px 40px 80px 40px;
     @include range-bp($sm, $sm-desktop) {
         padding: 110px 55px 80px 55px;
@@ -97,8 +93,6 @@ body {
 }
 
 .page-content {
-    // overflow: auto;
-    min-height: 100vh;
     h1 {
         margin-top: 0;
         font-family: $oswaldFont;
@@ -114,12 +108,6 @@ body {
     font-size: 4.5rem;
 }
 
-.page-body {
+html {
     overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
-}
-.page-body::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
 }

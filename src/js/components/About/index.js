@@ -30,7 +30,7 @@ let profileSlides = [
     {
         id: 1,
         active: false,
-        text: "<span className='text-mango'>A little bit on me.</span>Born in Virginia, and grew up in the East Coast <span className='text-mango'>(s/o to the Jersey, Philly, and NOVA folk)</span>. Front End Developer, Full Stack Human."
+        text: "<span className='text-mango'>Origin story: </span>Born in Virginia, and grew up in the East Coast <span className='text-mango'>(s/o to the Jersey, Philly, and NOVA folk)</span>. Front End Developer, Full Stack Human."
     },
     {
         id: 2,

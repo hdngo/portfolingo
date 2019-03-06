@@ -15,7 +15,6 @@ export default class RightNav extends React.Component {
 
     componentDidMount() {
         this.setState({show: true});
-        console.log('rendered');
     }
 
     render() {
