@@ -17,13 +17,13 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-      contentBase: './dist',
+      contentBase: './build',
       hot: true,
       historyApiFallback: true
   },
   output: {
     filename: '[name].js', // use [name].[has].js for prod
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
   optimization: {
