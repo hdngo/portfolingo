@@ -27,7 +27,6 @@ const PrimaryLayout = () => (
     <Route render={({ location }) => (
         <main className='page page-layout'>
         <Header />
-        {/* <main className='page-body'> */}
             <LeftNav/>
             <RightNav/>
             <TransitionGroup className='page-body'>
