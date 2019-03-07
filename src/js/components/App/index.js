@@ -5,6 +5,7 @@ import {
     Switch
 } from 'react-router-dom';
 import withSplashPage from '../withSplashPage';
+import { Helmet } from 'react-helmet';
 import Header from '../Header';
 import LeftNav from '../LeftNav';
 import RightNav from '../RightNav';
@@ -25,6 +26,26 @@ const Nada = () => {
 
 const PrimaryLayout = () => (
     <Route render={({ location }) => (
+        <React.Fragment>
+        <Helmet>
+            <title>Harvey Ngo</title>
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'></meta>
+            <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'></meta>
+            <meta name='description' content='Temporary cyber dwelling for a digital ngomad.'></meta>
+            <meta name='theme-color' content='#ffffff'></meta>
+            <meta name='twitter:card' content='summary'></meta>
+            <meta name='twitter:site' content='Harvey Ngo'></meta>
+            <meta name='twitter:title' content='Page Title'></meta>
+            <meta name='twitter:description' content='Temporary cyber dwelling for a digital ngomad.'></meta>
+            <meta name='twitter:creator' content='@harveydngo'></meta>
+            <meta property='og:title' content='Harvey Ngo' />
+            <meta property='og:type' content='website' />
+            <meta property='og:url' content='https://www.harveydngo.com/' />
+            <meta property='og:locale' content='en_US'></meta>
+            <meta property='og:description' content='Temporary cyber dwelling for a digital ngomad.' />
+            <meta property='og:site_name' content='Harvey Ngo' />
+            <meta property='fb:admins' content='1212893460' />
+        </Helmet>
         <main className='page page-layout'>
         <Header />
             <LeftNav/>
@@ -49,6 +70,7 @@ const PrimaryLayout = () => (
                 </CSSTransition>
             </TransitionGroup>
         </main>
+        </React.Fragment>
     )}/>
 )
 

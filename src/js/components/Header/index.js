@@ -69,7 +69,7 @@ class Header extends React.Component {
                     timeout={{
                         appear: 0,
                         enter: 400,
-                        exit: 800,
+                        exit: 600,
                     }}
                     classNames='mobile-menu'
                 >
