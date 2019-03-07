@@ -25,7 +25,7 @@ export default  {
         {
             id: 3,
             title: 'LinkedIn',
-            href: 'https://linked.com/in/hdngo',
+            href: 'https://linkedin.com/in/hdngo',
             text: 'LinkedIn',
             location: 'nav-social',
             fontawesome: 'linkedin-in'
