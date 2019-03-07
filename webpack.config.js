@@ -74,6 +74,8 @@ module.exports = {
       new CleanWebpackPlugin(['build']),
       new CopyPlugin([
         { from: './src/images/favicon.ico' },
+        { from: './public/_redirects',
+          to: './build/_redirects'},
       ]),
       new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
